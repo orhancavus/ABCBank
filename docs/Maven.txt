@@ -1,8 +1,11 @@
-# Silent Mode 
+# Simple Java project with maven
+
+## Silent Mode 
 mvn archetype:generate "-DgroupId=com.abc.bank" "-DartifactId=ABCBank" "-DarchetypeArtifactId=maven-archetype-quickstart" "-DarchetypeVersion=1.4" "-DinteractiveMode=false"
 
 
-# Interactive Modode..
+
+## Interactive Mode
 
 ❯ mvn archetype:generate
 [INFO] Scanning for projects...
@@ -39,7 +42,7 @@ package: com.abc.bank
 [INFO] Parameter: groupId, Value: com.abc.bank
 [INFO] Parameter: artifactId, Value: ABCBank
 [INFO] Parameter: version, Value: 1.0-SNAPSHOT
-[INFO] Project created from Archetype in dir: C:\Users\orhan\orhancavus\mywindev\java_projects\Maven_app_3\ABCBank
+[INFO] Project created from Archetype in dir: C:\Users\..\Maven_app_3\ABCBank
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
@@ -49,13 +52,13 @@ package: com.abc.bank
 
 
 
-(base) C:\Users\orhan\orhancavus\mywindev\java_projects\Maven_ABC\ABCBank> cmd /C ""C:\Program Files\Java\jdk-19\bin\java.exe" -XX:+ShowCodeDetailsInExceptionMessages -cp C:\Users\orhan\orhancavus\mywindev\java_projects\Maven_ABC\ABCBank\target\classes com.abc.bank.App "
+(base) C:\Users\..\Maven_ABC\ABCBank> cmd /C ""C:\Program Files\Java\jdk-19\bin\java.exe" -XX:+ShowCodeDetailsInExceptionMessages -cp C:\Users\orhan\orhancavus\mywindev\java_projects\Maven_ABC\ABCBank\target\classes com.abc.bank.App "
 Hello World!
 
-(base) C:\Users\orhan\orhancavus\mywindev\java_projects\Maven_ABC\ABCBank>
+(base) C:\Users\..\Maven_ABC\ABCBank>
 
 
-mvn test
+## mvn test
 
 [INFO] 
 [INFO] -------------------------------------------------------
@@ -75,4 +78,21 @@ mvn test
 [INFO] Finished at: 2023-03-23T13:46:25+03:00
 [INFO] ------------------------------------------------------------------------
 
-mvn package
+## mvn package
+
+## In order to run jar add the manifest to pom.xml
+
+<archive>
+    <manifest>
+    <addClasspath>true</addClasspath>
+    <classpathPrefix>lib/</classpathPrefix>
+    <mainClass>com.abc.bank.App</mainClass>
+    </manifest>
+</archive>
+
+## running jar 
+
+C:\Users\..\Maven_ABC\ABCBank>cd target
+
+C:\Users\..\Maven_ABC\ABCBank\target>java -jar ABCBank-1.0-SNAPSHOT.jar
+Hello World!
