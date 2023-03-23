@@ -48,10 +48,6 @@ C:.
 mvn clean test 
 ```
 
-## Compile source code and test code and executes Unit Test
-
-mvn clean test 
-
 ## Compile source code and test code, executes unit test, if all tests pass, it package compiled code in output archive
 
 ```bash
