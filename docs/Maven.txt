@@ -4,7 +4,6 @@
 mvn archetype:generate "-DgroupId=com.abc.bank" "-DartifactId=ABCBank" "-DarchetypeArtifactId=maven-archetype-quickstart" "-DarchetypeVersion=1.4" "-DinteractiveMode=false"
 
 
-
 ## Interactive Mode
 
 ❯ mvn archetype:generate
@@ -96,3 +95,21 @@ C:\Users\..\Maven_ABC\ABCBank>cd target
 
 C:\Users\..\Maven_ABC\ABCBank\target>java -jar ABCBank-1.0-SNAPSHOT.jar
 Hello World!
+
+Cleanup commands
+mvn clean Delete target folder in the project including submodule's ones
+
+Compile commands
+mvn clean compile Compile all code without running any test
+mvn clean test Compile source code and test code and executes Unit Test
+mvn clean package Compile source code and test code, executes unit test, if all tests pass, it package compiled code in output archive
+mvn clean verify Compile source/test code, executes unit test, package compiled code and then executes Integration tests
+
+Deploy commands
+mvn clean install Executes full compile steps and, if all test are succesful, deploy the resulting artifact into local maven repository
+mvn clean deploy Executes full compile steps and, if all test are succesful, deploy the resulting artifact into local maven repository and deploy to remote
+maven repository if configured
+
+Resolution commands
+mvn dependency:tree Resolves and displays the dependency tree for this project including subomdules
+mvn help:effective-pom Resolves and display the full pom hierarcy and displays it as a single pom
